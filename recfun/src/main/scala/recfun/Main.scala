@@ -1,7 +1,6 @@
 package recfun
 import common._
-import scala.collection.mutable.Stack
-import scala.collection.mutable.ListBuffer
+
 
 object Main {
   def main(args: Array[String]) {
