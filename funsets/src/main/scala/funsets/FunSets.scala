@@ -1,5 +1,6 @@
 package funsets
 
+
 /**
  * 2. Purely Functional Sets.
  */
@@ -65,12 +66,8 @@ object FunSets {
    * that satisfies `p`.
    */
   def exists(s: Set, p: Int => Boolean): Boolean = {
-    def iter(a: Int): Boolean = {
-      if (a > bound) false
-      else if (s(a) && p(a)) true  
-      else iter(a+1)
-    }
-    iter(-bound)
+    def not(f:Int=> Boolean) : Int => Boolean = !f(_)
+      forall(s, not(p)) == false
   }
 
   /**
